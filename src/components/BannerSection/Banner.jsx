@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 import clsx from "clsx";
-import { gsap } from "gsap";
-import styles from "./BannerAbout.module.scss";
+import {gsap} from "gsap";
+import styles from "./Banner.module.scss";
 
-const BannerAbout = () => {
+const Banner = () => {
   const bgImage = '/bg-about-us.jpg';
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const pointsContent = [
-    { name: 'Number of machines sold', value: 70, edit: true },
-    { name: 'Number of clients', value: 50, edit: true },
-    { name: 'Choose our products', value: 25, edit: true },
-    { name: 'Country of origin', value: 'Netherlands', edit: false },
-    { name: 'Advice and support', value: 7, prefix: 'languages', edit: false },
+    {name: 'Attempts to create a project ', value: 24, edit: true},
+    {name: 'Deleting the project ', value: 6, edit: true},
+    {name: 'Work experience', value: 2, edit: true},
+    {name: 'Life?', value: 'life is beautiful', edit: false},
+    {name: 'Advice and support', value: 420, prefix: 'languages', edit: true},
   ];
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const BannerAbout = () => {
             gsap.to(element, {
               duration: 2,
               innerHTML: endValue,
-              snap: { innerHTML: 1 },
+              snap: {innerHTML: 1},
               stagger: 1,
               onUpdate() {
                 element.innerHTML = `${gsap.utils.snap(1, this.targets()[0].innerHTML)}+`;
@@ -43,8 +44,8 @@ const BannerAbout = () => {
   }, [pointsContent]);
 
   return (
-    <section className={styles.banner} style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className={clsx('container')}>
+    <section className={styles.banner} style={{backgroundImage: `url(${bgImage})`}}>
+      <div className={clsx('container', styles.banner__wrapper)}>
         {!bgImage && (
           <div className={styles.videoBg}>
             <video
@@ -56,8 +57,8 @@ const BannerAbout = () => {
               playsInline
               poster="https://virmer.com/assets/files/img/hummingbird/preview-cleaning-bg-01.jpg"
             >
-              <source src="https://virmer.com/assets/files/video/cleaning-video-bg-02.webm" type="video/webm" />
-              <source src="https://virmer.com/assets/files/video/cleaning-video-bg-02.mp4" type="video/mp4" />
+              <source src="https://virmer.com/assets/files/video/cleaning-video-bg-02.webm" type="video/webm"/>
+              <source src="https://virmer.com/assets/files/video/cleaning-video-bg-02.mp4" type="video/mp4"/>
               The video element is not supported by your browser
               <a href="https://virmer.com/assets/files/video/cleaning-video-bg-02.mp4" download tabIndex="-1">
                 Download video
@@ -67,10 +68,10 @@ const BannerAbout = () => {
         )}
         <div className={styles.banner__inner}>
           <h1 className={styles.banner__title}>
-            <span>Virmer</span> is an official supplier of CNC laser machines and Wattsan CNC milling machines
+            <span>This page</span>is designed for learning React Js.
           </h1>
           <p>
-            with over <span>15 years</span> experience in manufacturing industrial equipment for various industries.
+            Everything here is for <span>educational</span> purposes only.
           </p>
         </div>
         <dl className={clsx(styles.banner__list, styles.ponty)}>
@@ -91,4 +92,4 @@ const BannerAbout = () => {
   );
 };
 
-export default BannerAbout;
+export default Banner;
