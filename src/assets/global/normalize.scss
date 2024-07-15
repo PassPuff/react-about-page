@@ -200,7 +200,7 @@ select { /* 1 */
 }
 
 /**
- * Correct the inability to scss clickable types in iOS and Safari.
+ * Correct the inability to global clickable types in iOS and Safari.
  */
 
 button,
@@ -285,7 +285,7 @@ textarea {
 }
 
 /**
- * Correct the cursor scss of increment and decrement buttons in Chrome.
+ * Correct the cursor global of increment and decrement buttons in Chrome.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -295,7 +295,7 @@ textarea {
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline scss in Safari.
+ * 2. Correct the outline global in Safari.
  */
 
 [type="search"] {
@@ -312,7 +312,7 @@ textarea {
 }
 
 /**
- * 1. Correct the inability to scss clickable types in iOS and Safari.
+ * 1. Correct the inability to global clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
 

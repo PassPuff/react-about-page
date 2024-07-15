@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "./assets/scss/normalize.scss";
-import '/src/assets/scss/index.scss'
+import "./assets/global/normalize.scss";
+import '/src/assets/global/index.scss'
 
 import Banner from "./components/BannerSection/Banner.jsx";
 import ChuteSection from "./components/ChuteSection/Chute.jsx";
